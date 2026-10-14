@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ada Sesuatu Untukmu 💌</title>
+<style>
+:root{--pink:#ff6fae;--rose:#ffb6d5;--ink:#66334d;--cream:#fff7fb}
+*{box-sizing:border-box}
+body{margin:0;font-family: "Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff5fa,#ffe2ef,#fff9fc);min-height:100vh;overflow-x:hidden}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.heart{position:absolute;bottom:-40px;color:#ff7fb4;opacity:.55;animation:floatUp linear infinite}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+.wrap{position:relative;z-index:1;max-width:850px;margin:auto;padding:18px}
+nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:8px 0 18px}
+.dot{border:1px solid #ffc3dc;background:#fff9fc;color:#9b5574;padding:8px 12px;border-radius:99px;font-size:.85rem}
+.dot.active{background:var(--pink);color:white;border-color:var(--pink)}
+.page{display:none;animation:appear .45s ease}
+.page.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.card{background:#ffffffd9;border:1px solid #ffe0ec;border-radius:26px;padding:clamp(20px,5vw,38px);box-shadow:0 15px 40px #c35c8618;text-align:center}
+.eyebrow{letter-spacing:.13em;text-transform:uppercase;font-size:.75rem;color:#c05b89;font-weight:800}
+h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1.1;margin:12px 0;color:#c74781}
+h2{font-size:clamp(1.5rem,5vw,2.2rem);margin:10px 0;color:#c74781}
+p{line-height:1.8;font-size:1rem}
+.subtitle{max-width:590px;margin:0 auto 22px}
+.big-heart{font-size:4rem;display:inline-block;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.13)}}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;padding:13px 20px;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-2px);box-shadow:0 8px 18px #d84d8a28}
+.primary{background:linear-gradient(120deg,#ff6fae,#ed5b9c);color:white;font-weight:800}
+.secondary{background:#fff0f7;color:#a54472;border:1px solid #ffc6df}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0}
+.photo{aspect-ratio:3/4;border:2px dashed #f5a7c8;background:linear-gradient(145deg,#fff2f8,#ffe0ee);border-radius:17px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;color:#ad5c80;font-size:.88rem;padding:8px}
+.photo img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
+.photo span{padding:8px;text-align:center}
+.small{font-size:.83rem;color:#9e6981}
+footer{text-align:center;padding:20px 0;color:#b87593;font-size:.8rem}
+.response{font-weight:800;color:#c74781;min-height:30px}
+@media(max-width:480px){.gallery{gap:6px}.photo{border-radius:12px;font-size:.75rem}.dot{padding:7px 10px}.card{border-radius:21px}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<div class="wrap">
+<nav aria-label="Navigasi halaman">
+  <span class="dot active" data-dot="0">♡ Pembuka</span>
+  <span class="dot" data-dot="1">♡ Cerita</span>
+  <span class="dot" data-dot="2">♡ Perasaan</span>
+  <span class="dot" data-dot="3">♡ Pertanyaan</span>
+</nav>
+
+<section class="page active" id="page0">
+  <div class="card">
+    <div class="big-heart">💌</div>
+    <div class="eyebrow">Sebuah pesan kecil untuk Adel Michel Aprilia</div>
+    <h1>Hai, kamu! 🌷</h1>
+    <p class="subtitle">Ada sesuatu yang sudah lama ingin kusampaikan. Nggak perlu buru-buru, baca saja sampai selesai, ya.</p>
+    <p class="small">Dari: <strong>Bayu Abdi Pramana</strong> · Untuk: <strong>Adel Michel Aprilia</strong></p>
+    <div class="actions"><button class="primary" onclick="go(1)">Buka pesannya ✨</button></div>
+  </div>
+</section>
+
+<section class="page" id="page1">
+  <div class="card">
+    <div class="eyebrow">Bagian 1 · Cerita kecil</div>
+    <h2>Hal sederhana yang kuingat 🌸</h2>
+    <p>Ada hal-hal kecil tentang dirimu yang tanpa sadar membuat hariku terasa lebih menyenangkan. Cara kita ngobrol, bercanda, atau sekadar bertemu, semuanya jadi kenangan yang kusimpan baik-baik.</p>
+    <p>Aku nggak tahu apakah kamu menyadarinya, tapi mengenalmu adalah salah satu hal yang membuatku tersenyum belakangan ini.</p>
+    <div class="gallery">
+      <div class="photo"><span>📷 Foto 1<br><small>Ganti dengan fotomu</small></span><img src="foto1.jpg" alt="Foto kenangan 1" onerror="this.style.display='none'"></div>
+      <div class="photo"><span>📷 Foto 2<br><small>Ganti dengan fotomu</small></span><img src="foto2.jpg" alt="Foto kenangan 2" onerror="this.style.display='none'"></div>
+      <div class="photo"><span>📷 Foto 3<br><small>Ganti dengan fotomu</small></span><img src="foto3.jpg" alt="Foto kenangan 3" onerror="this.style.display='none'"></div>
+    </div>
+    <p class="small">halaman 1</p>
+    <div class="actions"><button class="secondary" onclick="go(0)">← Kembali</button><button class="primary" onclick="go(2)">Lanjutkan 💗</button></div>
+  </div>
+</section>
+
+<section class="page" id="page2">
+  <div class="card">
+    <div class="eyebrow">Bagian 2 · Sejujurnya</div>
+    <h2>Aku ingin jujur sama kamu 💗</h2>
+    <p>Awalnya mungkin aku menganggap ini hanya rasa kagum biasa. Tapi lama-lama, aku sadar kalau aku ingin mengenalmu lebih dekat, mendengar lebih banyak ceritamu, dan menjadi seseorang yang bisa ikut membuatmu tersenyum.</p>
+    <p>Aku suka sama kamu. Aku menyampaikan ini bukan untuk membuatmu merasa harus membalas perasaanku, melainkan karena aku ingin jujur tentang apa yang kurasakan.</p>
+    <div class="gallery">
+      <div class="photo"><span>📷 Foto 4<br><small>Ganti dengan fotomu</small></span><img src="foto4.jpg" alt="Foto kenangan 4" onerror="this.style.display='none'"></div>
+      <div class="photo"><span>📷 Foto 5<br><small>Ganti dengan fotomu</small></span><img src="foto5.jpg" alt="Foto kenangan 5" onerror="this.style.display='none'"></div>
+      <div class="photo"><span>📷 Foto 6<br><small>Ganti dengan fotomu</small></span><img src="foto6.jpg" alt="Foto kenangan 6" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="actions"><button class="secondary" onclick="go(1)">← Kembali</button><button class="primary" onclick="go(3)">Ada satu pertanyaan… 💌</button></div>
+  </div>
+</section>
+
+<section class="page" id="page3">
+  <div class="card">
+    <div class="big-heart">🌷</div>
+    <div class="eyebrow">Bagian 3 · Pertanyaan terakhir</div>
+    <h2>Maukah kamu memberiku kesempatan?</h2>
+    <p>Kalau kamu juga ingin, aku ingin mencoba mengenalmu lebih dekat dan melihat ke mana cerita ini akan berjalan. Kita bisa menjalaninya pelan-pelan, tanpa tekanan.</p>
+    <div class="gallery">
+      <div class="photo"><span>📷 Foto 7<br><small>Ganti dengan fotomu</small></span><img src="foto7.jpg" alt="Foto kenangan 7" onerror="this.style.display='none'"></div>
+      <div class="photo"><span>📷 Foto 8<br><small>Ganti dengan fotomu</small></span><img src="foto8.jpg" alt="Foto kenangan 8" onerror="this.style.display='none'"></div>
+      <div class="photo"><span>📷 Foto 9<br><small>Ganti dengan fotomu</small></span><img src="foto9.jpg" alt="Foto kenangan 9" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="actions">
+      <button class="primary" onclick="answer('yes')">Aku mau 💖</button>
+      <button class="secondary" onclick="answer('think')">Aku mau pikir-pikir dulu 🌼</button>
+      <button class="secondary" onclick="answer('no')">Maaf, aku nggak bisa 💐</button>
+    </div>
+    <p class="response" id="response" aria-live="polite"></p>
+    <p class="small">Apa pun jawabanmu, terima kasih sudah membaca sampai akhir. Aku akan menghargai keputusanmu. 🤍</p>
+    <div class="actions"><button class="secondary" onclick="go(2)">← Baca lagi</button></div>
+  </div>
+</section>
+<footer>Dibuat dengan tulus ♡</footer>
+</div>
+<script>
+function go(n){
+ document.querySelectorAll('.page').forEach((p,i)=>p.classList.toggle('active',i===n));
+ document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.dot').forEach(d=>d.addEventListener('click',()=>go(Number(d.dataset.dot))));
+function answer(type){
+ const r=document.getElementById('response');
+ if(type==='yes') r.textContent='Terima kasih sudah memberiku kesempatan. Kita jalani pelan-pelan, ya. 💖';
+ else if(type==='think') r.textContent='Nggak apa-apa. Ambil waktu yang kamu perlukan, aku menghargainya. 🌼';
+ else r.textContent='Terima kasih sudah jujur. Aku menghargai jawabanmu dan tetap berharap yang terbaik untukmu. 🤍';
+}
+const holder=document.getElementById('hearts');
+for(let i=0;i<18;i++){const s=document.createElement('span');s.className='heart';s.textContent=['♡','♥','✦'][i%3];s.style.left=(Math.random()*100)+'%';s.style.animationDuration=(8+Math.random()*9)+'s';s.style.animationDelay=(-Math.random()*15)+'s';s.style.fontSize=(14+Math.random()*20)+'px';holder.appendChild(s)}
+</script>
+</body>
+</html>
